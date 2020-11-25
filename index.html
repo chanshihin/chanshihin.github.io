@@ -1,5 +1,4 @@
 
-
 <style>
 input {
     background: transparent;
@@ -39,7 +38,7 @@ input {
 <script>
   function startDictation() {
 
-	var recognition = new webkitSpeechRecognition()
+	var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)()
       recognition.continuous = true;
       recognition.interimResults = true;
       recognition.lang = "en-US";
